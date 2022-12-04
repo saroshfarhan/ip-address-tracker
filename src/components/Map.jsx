@@ -10,7 +10,7 @@ function getIcon() {
   });
 }
 
-function Map({ lat, lon }) {
+function Map({ lat, lon, city, region }) {
   return (
     <MapContainer
       center={[51.505, -0.09]}
@@ -24,7 +24,7 @@ function Map({ lat, lon }) {
       />
       <Marker position={[51.505, -0.09]} icon={getIcon()}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          {city} <br /> {region}
         </Popup>
       </Marker>
     </MapContainer>

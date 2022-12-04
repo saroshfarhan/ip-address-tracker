@@ -64,7 +64,7 @@ function Tracker({
         id="map-component"
         className="z-[0] h-[63vh] w-screen md:h-[76.8vh] lg:h-[66vh]"
       >
-        <Map lat={lat} lon={lon} />
+        <Map lat={lat} lon={lon} city={city} region={region} />
       </div>
     </div>
   );

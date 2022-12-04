@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Tracker from "./components/Tracker";
 
 function App() {
@@ -6,8 +6,14 @@ function App() {
     if (inputIp === "") {
       alert("Please provide an ip address");
     }
-    console.log(inputIp);
+    //Add fectch here with ip address
   }
+
+  useEffect(() => {
+    fetch("http://ip-api.com/json")
+      .then((res) => res.json())
+      .then((data) => {});
+  }, []);
 
   return (
     <main className="h-screen w-screen">
