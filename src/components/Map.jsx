@@ -1,5 +1,6 @@
-import React from "react";
-import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
+import React, { useEffect } from "react";
+
+import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet";
 
 import markerIcon from "../assets/images/icon-location.svg";
 import L from "leaflet";
@@ -11,10 +12,24 @@ function getIcon() {
 }
 
 function Map({ lat, lon, city, region }) {
+  let position = [lat, lon];
+  let zoom = 13;
+  console.log(position);
+
+  function LocationMarker(props) {
+    const map = useMap();
+
+    useEffect(() => {
+      map.flyTo(props.position, props.zoom);
+    });
+
+    return null;
+  }
+
   return (
     <MapContainer
-      center={[51.505, -0.09]}
-      zoom={15}
+      center={position}
+      zoom={zoom}
       scrollWheelZoom={false}
       style={{ width: "100vw", height: "100%" }}
     >
@@ -22,11 +37,12 @@ function Map({ lat, lon, city, region }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]} icon={getIcon()}>
+      <Marker position={position} icon={getIcon()}>
         <Popup>
           {city} <br /> {region}
         </Popup>
       </Marker>
+      <LocationMarker position={position} zoom={zoom} />
     </MapContainer>
   );
 }
