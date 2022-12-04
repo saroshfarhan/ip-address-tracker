@@ -1,7 +1,17 @@
+import React from "react";
+import Tracker from "./components/Tracker";
+
 function App() {
+  function searchIp(inputIp) {
+    if (inputIp === "") {
+      alert("Please provide an ip address");
+    }
+    console.log(inputIp);
+  }
+
   return (
-    <main className="container flex h-screen items-center justify-center">
-      <h1 className="text-3xl font-bold">IP Tracker</h1>
+    <main className="h-screen w-screen">
+      <Tracker handleSearch={searchIp} />
     </main>
   );
 }
