@@ -14,41 +14,47 @@ function App() {
   });
 
   function searchIp(inputIp) {
-    let url = "http://ip-api.com/json";
+    let url =
+      "https://api.bigdatacloud.net/data/ip-geolocation?localityLanguage=en&key=bdc_f42b11b1687544b48a3497c12240c447";
     if (inputIp === "") {
       alert("Please provide an ip address");
     } else {
-      url = "http://ip-api.com/json/" + inputIp;
+      url =
+        "https://api.bigdatacloud.net/data/ip-geolocation?ip=" +
+        inputIp +
+        "&localityLanguage=en&key=bdc_f42b11b1687544b48a3497c12240c447";
     }
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setIpData({
-          ipAdd: data.query,
-          city: data.city,
-          region: data.region,
-          zip: data.zip,
-          lat: data.lat,
-          lon: data.lon,
-          timezone: data.timezone,
-          isp: data.isp,
+          ipAdd: data.ip,
+          city: data.location.localityName,
+          region: data.location.isoPrincipalSubdivisionCode,
+          zip: data.location.postcode,
+          lat: data.location.latitude,
+          lon: data.location.longitude,
+          timezone: data.location.timeZone.ianaTimeId,
+          isp: data.network.organisation,
         });
       });
   }
 
   useEffect(() => {
-    fetch("http://ip-api.com/json")
+    let url =
+      "https://api.bigdatacloud.net/data/ip-geolocation?localityLanguage=en&key=bdc_f42b11b1687544b48a3497c12240c447";
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setIpData({
-          ipAdd: data.query,
-          city: data.city,
-          region: data.region,
-          zip: data.zip,
-          lat: data.lat,
-          lon: data.lon,
-          timezone: data.timezone,
-          isp: data.isp,
+          ipAdd: data.ip,
+          city: data.location.localityName,
+          region: data.location.isoPrincipalSubdivisionCode,
+          zip: data.location.postcode,
+          lat: data.location.latitude,
+          lon: data.location.longitude,
+          timezone: data.location.timeZone.ianaTimeId,
+          isp: data.network.organisation,
         });
       });
   }, []);

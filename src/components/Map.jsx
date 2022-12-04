@@ -12,7 +12,6 @@ function getIcon() {
 function Map({ lat, lon, city, region }) {
   let position = [lat, lon];
   let zoom = 13;
-  console.log(position);
 
   function LocationMarker(props) {
     const map = useMap();
