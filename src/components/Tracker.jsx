@@ -57,7 +57,7 @@ function Tracker({
           id="info-card"
           className="absolute flex w-screen items-center justify-center"
         >
-          <div className="z-[1] mt-8 h-[280px] w-[320px] rounded-xl border border-black bg-white md:mt-14  md:h-[7.5rem] md:w-[700px] lg:mt-14 lg:h-[7.5rem] lg:w-[860px]"></div>
+          <div className="z-[1] mt-8 h-[280px] w-[320px] rounded-xl  bg-white md:mt-14  md:h-[7.5rem] md:w-[700px] lg:mt-14 lg:h-[7.5rem] lg:w-[860px]"></div>
         </div>
       </div>
       <div
