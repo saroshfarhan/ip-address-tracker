@@ -57,8 +57,51 @@ function Tracker({
           id="info-card"
           className="absolute flex w-screen items-center justify-center"
         >
-          <div className="z-[1] mt-8 h-[280px] w-[320px] rounded-xl  bg-white md:mt-14  md:h-[7.5rem] md:w-[700px] lg:mt-14 lg:h-[7.5rem] lg:w-[860px]">
-            {ipAdd}, {city},{region},{zip}, {lat}, {lon},{timeZone}, {isp}
+          <div className="z-[1] mt-8 grid w-[320px] items-center justify-evenly gap-7 rounded-xl bg-white md:mt-14 md:w-[520px] lg:mt-14 lg:flex lg:h-[160px] lg:w-[960px] lg:gap-4 ">
+            <div
+              id="ip-address"
+              className="pt-6 text-center lg:pt-0 lg:pl-6 lg:text-left"
+            >
+              <p className="text-sm font-semibold uppercase text-darkGray">
+                ip address
+              </p>
+              <h1 className="pt-2 text-2xl font-bold text-veryDarkGray">
+                {ipAdd}
+              </h1>
+            </div>
+            <div
+              id="location"
+              className="text-center lg:border-l lg:border-l-darkGray lg:pl-6 lg:text-left"
+            >
+              <p className="text-sm font-semibold uppercase text-darkGray">
+                location
+              </p>
+              <h1 className="pt-2 text-2xl font-bold text-veryDarkGray">
+                {city}, {region} {zip}
+              </h1>
+            </div>
+            <div
+              id="timezone"
+              className="text-center lg:border-l lg:border-l-darkGray lg:pl-6 lg:text-left"
+            >
+              <p className="text-sm font-semibold uppercase text-darkGray">
+                timezone
+              </p>
+              <h1 className="pt-2 text-2xl font-bold text-veryDarkGray">
+                {timeZone}
+              </h1>
+            </div>
+            <div
+              id="isp"
+              className="pb-6 text-center lg:border-l lg:border-l-darkGray lg:pr-4 lg:pl-6 lg:pb-0 lg:text-left"
+            >
+              <p className="text-sm font-semibold uppercase text-darkGray">
+                isp
+              </p>
+              <h1 className="pt-2 text-2xl font-bold text-veryDarkGray">
+                {isp}
+              </h1>
+            </div>
           </div>
         </div>
       </div>

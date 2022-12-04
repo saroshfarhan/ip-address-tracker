@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-
 import { MapContainer, Marker, TileLayer, Popup, useMap } from "react-leaflet";
-
 import markerIcon from "../assets/images/icon-location.svg";
 import L from "leaflet";
 
