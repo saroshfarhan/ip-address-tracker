@@ -29,7 +29,7 @@ function Tracker({
     <div id="tracker-page" className="grid w-screen">
       <div
         id="tracker-inputs"
-        className="relative h-[300px] w-screen bg-bgPattern object-cover md:h-[15.625rem] lg:h-[15.625rem]"
+        className="relative h-[300px] w-screen bg-bgPattern bg-no-repeat object-cover md:h-[15.625rem] lg:h-[15.625rem]"
       >
         <h1 className="mt-6 text-center text-3xl font-medium text-white">
           IP Address Tracker
